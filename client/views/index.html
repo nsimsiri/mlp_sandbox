@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="studentRecord">
+<head>
+	<meta charset="UTF-8">
+	<title>test_stack</title>
+</head>
+<body>
+	<div ng-controller="studentRecordController">
+		<h1>you have {{students.length}} upcoming lessons</h1>
+		<ul>
+			<li ng-repeat="student in students">{{student.date}} - {{student.name}} - {{student.instrument}}</li>
+		</ul>
+
+		<form ng-submit="createStudentRecord()">
+			Name: <input type="text", ng-model="studentName" /><br />
+			Instrument: <input type="text", ng-model="studentInstrument" /><br />
+			Start Date : <input type="text", ng-model="studentDate" />(mm/dd otherwise kaboom)<br />
+			Number of Lessons: <input type="text", ng-model="studentFreq"/>(recurrence i.e. put an integer here)<br />
+			<button type="submit">Add</button>
+		</form>
+		{{after}};
+	</div>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-resource.js"></script>
+	<script type='text/javascript' src='/js/client-app.js'></script>
+	<script type='text/javascript' src='/js/controllers/student-record-controller.js'></script>
+</body>
+</html>
